@@ -1,8 +1,8 @@
 class Graph:
-    def __init__(self, n, edges):
+    def __init__(self, n: int, edges: List[List[int]]):
         self.n = n
         self.adj = [[] for _ in range(n)]
-        self.ind =  * n
+        self.ind = [0] * n
         for u, v in edges:
             self.adj[u].append(v)
             self.adj[v].append(u)
@@ -26,13 +26,13 @@ class Graph:
                 components.append(comp)
         return components
 
-def countCompleteComponents(n, edges):
+
+def countCompleteComponents(n: int, edges: List[List[int]]) -> int:
     g = Graph(n, edges)
     components = g.getConnectedComponents()
     completeCompCount = 0
     for comp in components:
         numOfVertices = len(comp)
-        ind = [g.ind[x] for x in comp]
-        if len(set(ind)) == 1 and ind == numOfVertices - 1:
+        if all(g.ind[x] == numOfVertices - 1 for x in comp):
             completeCompCount += 1
     return completeCompCount
