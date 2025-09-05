@@ -33,3 +33,15 @@ def middleNode(head):
     temp = temp.next
 
   return temp
+
+def middleNode2(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    if not head:
+        return None
+    slow = head
+    fast = head
+
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+
+    return slow
