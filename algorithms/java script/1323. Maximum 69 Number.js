@@ -13,4 +13,3 @@ var maximum69Number = function (num) {
     }
     return +t
 };
-1
