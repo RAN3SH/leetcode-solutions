@@ -7,7 +7,7 @@ string longestCommonPrefix(vector<string>& words) {
     for (int i = 0; i < words[0].size(); i++) {
         for (string& w : words) {
             if (words[0][i] == w[i]) {
-                // good
+    
             } else {
                 return commonPrefixStr;
             }
