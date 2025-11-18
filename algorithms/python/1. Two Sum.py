@@ -9,7 +9,6 @@ class Solution:
             if remaining in prev_eles:
                 j = prev_eles[remaining]
                 return [j, i]
-
             prev_eles[x] = i
 
     def twoSum2(self, nums: List[int], target: int) -> List[int]:
